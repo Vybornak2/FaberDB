@@ -1,0 +1,142 @@
+site_name: FaberDB
+site_description: A Python package for fatigue life evaluation of materials
+site_url: https://vybornak2.github.io/FaberDB/
+repo_url: https://github.com/vybornak2/FaberDB
+repo_name: vybornak2/FaberDB
+
+theme:
+  name: material
+  palette:
+    - media: "(prefers-color-scheme)"
+      toggle:
+        icon: material/link
+        name: Switch to light mode
+    - media: "(prefers-color-scheme: light)"
+      scheme: default
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to dark mode
+    - media: "(prefers-color-scheme: dark)"
+      scheme: slate
+      primary: indigo
+      accent: blue
+      toggle:
+        icon: material/toggle-switch-off
+        name: Switch to system preference
+  features:
+    - header.autohide
+    - navigation.instant
+    - navigation.tracking
+    - navigation.tabs
+    - navigation.tabs.sticky
+    - search.suggest
+    - search.highlight
+    - toc.follow
+    - content.code.copy
+    - content.code.select
+    - content.tabs.link
+    - content.footnote.tooltips
+    - content.tooltips
+  icon:
+    repo: fontawesome/brands/github
+  font:
+    text: Roboto
+    code: Roboto Mono
+
+plugins:
+  - search
+  - tags
+  - autorefs
+  - mkdocstrings:
+      handlers:
+        python:
+          paths: [src]
+          options:
+            show_symbol_type_heading: true
+            show_symbol_type_toc: true
+            docstring_style: google
+            show_source: true
+            show_root_heading: true
+            members_order: source
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - attr_list
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.betterem
+  - pymdownx.blocks.caption
+  - tables
+  - footnotes
+  - md_in_html
+  - def_list
+  - abbr
+
+  - pymdownx.superfences:
+      custom_fences:
+        - name: mermaid
+          class: mermaid
+          format: !!python/name:pymdownx.superfences.fence_code_format
+
+  - pymdownx.highlight:
+      anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
+
+  - pymdownx.tabbed:
+      alternate_style: true
+
+  - pymdownx.emoji:
+      emoji_index: !!python/name:material.extensions.emoji.twemoji
+      emoji_generator: !!python/name:material.extensions.emoji.to_svg
+
+  - pymdownx.tasklist:
+      custom_checkbox: true
+
+  - pymdownx.arithmatex:
+      generic: true
+
+  - toc:
+      permalink: true
+      toc_depth: 3
+
+extra_javascript:
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - javascripts/mathjax.js
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+  - javascripts/tablesort.js
+  - https://unpkg.com/tablesort@5.3.0/dist/tablesort.min.js
+
+extra_css:
+  - stylesheets/extra.css
+
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/vybornak2/FaberDB
+      name: FaberDB on GitHub
+    - icon: fontawesome/brands/linkedin
+      link: https://www.linkedin.com/company/faber-cost/
+      name: FABER on LinkedIn
+    - icon: material/web
+      link: https://faber-cost.eu/
+      name: FABER Website
+    - icon: material/email
+      link: mailto:kris.hectors@ugent.be
+      name: Contact Kris Hectors
+
+nav:
+  - Home:
+    - Overview: index.md
+    - FABER COST: faber_cost.md
+    - License: development/license.md
+  - API Reference: api/index.md
+  - Development:
+      - Overview: development/index.md
+      - Contributing: development/contributing.md
+      - Code of Conduct: development/code_of_conduct.md
+      - License: development/license.md

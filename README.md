@@ -1,59 +1,76 @@
-# __package_name__
+# FaberDB
 
-__package_description__
+A Python package for fatigue life evaluation of materials.
 
-## Development
+## Features
 
-### Environment Setup
+__To Be Implemented__
 
-```bash
-uv venv
-uv sync
-.venv\Scripts\activate
-```
+## Quick Links
 
-[official installation guide for `uv`](https://github.com/astral-sh/uv#installation)
+- [Contributing Guide](CONTRIBUTING.md)
+- [Documentation](https://vybornak2.github.io/FaberDB/)
+- [API Reference](https://vybornak2.github.io/FaberDB/api/)
+- [Code of Conduct](CODE_OF_CONDUCT.md)
 
-## Development Tools
-
-some short text here
-
-### Pre-commit
+## Installation
 
 ```bash
-# Update pre-commit hooks
-pre-commit autoupdate 
-# Install pre-commit hooks 
-pre-commit install
-# Run pre-commit hooks on all files without committing
-pre-commit run --all-files
+pip install faberdb
 ```
 
-### Pytest
+For development installation and more options, see our [detailed installation guide](https://vybornak2.github.io/FaberDB/development/install/).
+
+## Documentation
+
+The documentation includes:
+
+- [API Reference](https://vybornak2.github.io/FaberDB/api/) - Detailed documentation of modules, classes, and functions
+- [Development Guides](https://vybornak2.github.io/FaberDB/development/) - Information for contributors
+
+### Building Documentation Locally
+
+```bash
+# Install development dependencies
+pip install -e .
+
+# Build and serve documentation
+mkdocs serve
+```
+
+Visit `http://127.0.0.1:8000` to view the documentation locally.
+
+## Contributing
+
+We welcome contributions and follow Test-Driven Development (TDD) principles. Please see our [Contributing Guide](CONTRIBUTING.md) for:
+
+- Setting up your development environment
+- Test-Driven Development workflow
+- Code quality guidelines and standards
+- Documentation requirement
+- Pull request process
+
+## Testing
+
+FaberDB uses pytest for testing:
 
 ```bash
 # Run all tests
 pytest
-# Run tests in a specific file
-pytest path/to/test_file.py
-# Run a specific test function
-pytest path/to/test_file.py::test_function
+
+# Run with coverage
+pytest --cov=src/faberdb
 ```
 
-### Ruff
+## The FABER Project
 
-```bash
-# Check for linting errors and formatting issues
-ruff check .
-# Format code
-ruff format .
-# Fix linting errors automatically (use with caution)
-ruff check . --fix
-```
+FaberDB is a key initiative of Working Group 6 (WG6) within the [FABER](https://faber-cost.eu/) (Fatigue Benchmark Repository) project, operating under COST Action CA23109.
 
-### Mypy
+## License
 
-```bash
-# Run type checking
-mypy .
-```
+This project is licensed under the MIT License - see the [LICENSE](LICENSE.md) file for details.
+
+## Contact
+
+Jan Vyborny - <kris.hectors@ugent.be>
+Project Link: [github.com/vybornak2/FaberDB](https://github.com/vybornak2/FaberDB)
